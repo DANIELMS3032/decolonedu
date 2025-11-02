@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DECOLONEDU - Centro de Recursos Decoloniais</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link para seu novo arquivo de CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans leading-normal tracking-normal relative overflow-x-hidden">
+
+  <!-- Cabeçalho -->
+  <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-40 w-full shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex justify-between w-full md:w-auto">
+        <!-- TÍTULO/LOGO -->
+        <a href="#" class="flex items-center space-x-3" data-page="page-inicio">
+          <img src="assets/logo_decolonedu.jpg.png" alt="Logo DecolonEdu" class="h-10 w-10 md:h-12 md:w-12 object-contain">
+          <span class="text-3xl md:text-4xl font-bold text-teal-700 whitespace-nowrap">
+            Decolon<span class="text-orange-600">Edu</span>
+          </span>
+        </a>
+
+        <!-- Botão de Menu Mobile -->
+        <button id="mobile-menu-button" class="md:hidden text-white text-3xl">
+          <svg id="menu-open-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h16"></path>
+          </svg>
+          <svg id="menu-close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Links de Navegação (Desktop) -->
+      <div id="desktop-menu" class="hidden md:flex items-center space-x-4">
+        <a href="#" class="nav-link active" data-page="page-inicio" data-lang-pt="Início" data-lang-es="Inicio"
+          data-lang-en="Home">Início</a>
+        <a href="#" class="nav-link" data-page="page-kit" data-lang-pt="Kit de Ferramentas"
+          data-lang-es="Kit de Herramientas" data-lang-en="Toolkit">Kit de Ferramentas</a>
+        <a href="#" class="nav-link" data-page="page-pesquisa" data-lang-pt="A Pesquisa" data-lang-es="La Investigación"
+          data-lang-en="The Research">A Pesquisa</a>
+        <a href="#" class="nav-link" data-page="page-repositorio" data-lang-pt="Repositório"
+          data-lang-es="Repositorio" data-lang-en="Repository">Repositório</a>
+        <a href="#" class="nav-link" data-page="page-fabrica" data-lang-pt="Fábrica de Jogos"
+          data-lang-es="Fábrica de Juegos" data-lang-en="Game Factory">Fábrica de Jogos</a>
+        <a href="#" class="nav-link" data-page="page-grio" data-lang-pt="Chat Griô" data-lang-es="Chat Griô"
+          data-lang-en="Griô Chat">Chat Griô</a>
+        <a href="#" class="nav-link" data-page="page-sobre" data-lang-pt="Sobre" data-lang-es="Sobre"
+          data-lang-en="About">Sobre</a>
+
+        <!-- Seletor de Idioma (Desktop) -->
+        <div class="flex space-x-2 pl-4">
+          <button class="lang-switcher" data-lang="pt">PT</button>
+          <button class="lang-switcher" data-lang="es">ES</button>
+          <button class="lang-switcher" data-lang="en">EN</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Menu Mobile (Dropdown) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800/90 backdrop-blur-md">
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-inicio" data-lang-pt="Início"
+        data-lang-es="Inicio" data-lang-en="Home">Início</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-kit" data-lang-pt="Kit de Ferramentas"
+        data-lang-es="Kit de Herramientas" data-lang-en="Toolkit">Kit de Ferramentas</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-pesquisa" data-lang-pt="A Pesquisa"
+        data-lang-es="La Investigación" data-lang-en="The Research">A Pesquisa</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-repositorio" data-lang-pt="Repositório"
+        data-lang-es="Repositorio" data-lang-en="Repository">Repositório</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-fabrica" data-lang-pt="Fábrica de Jogos"
+        data-lang-es="Fábrica de Juegos" data-lang-en="Game Factory">Fábrica de Jogos</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-grio" data-lang-pt="Chat Griô"
+        data-lang-es="Chat Griô" data-lang-en="Griô Chat">Chat Griô</a>
+      <a href="#" class="nav-link block px-6 py-3 text-center" data-page="page-sobre" data-lang-pt="Sobre"
+        data-lang-es="Sobre" data-lang-en="About">Sobre</a>
+      <!-- Seletor de Idioma (Mobile) -->
+      <div class="flex justify-center space-x-4 py-3">
+        <button class="lang-switcher" data-lang="pt">PT</button>
+        <button class="lang-switcher" data-lang="es">ES</button>
+        <button class="lang-switcher" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container mx-auto p-4 md:p-8">
+
+    <!-- =================================== -->
+    <!-- PÁGINA 1: INÍCIO (page-inicio)     -->
+    <!-- =================================== -->
+    <section id="page-inicio" class="page-content">
+      <!-- Seção Principal (Hero) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[70vh]">
+        <!-- Coluna de Texto -->
+        <div class="animate-on-scroll fade-in-up space-y-6">
+          <h1 class="text-4xl lg:text-5xl font-bold" data-lang-pt="DECOLONEDU: Práticas e Pesquisas para uma Educação Antirracista." data-lang-es="DECOLONEDU: Prácticas e Investigaciones para una Educación Antirracista." data-lang-en="DECOLONEDU: Practices and Research for an Antiracist Education.">
+            DECOLONEDU: Práticas e Pesquisas para uma Educação Antirracista.
+          </h1>
+          <p class="text-xl lg:text-2xl text-gray-300" data-lang-pt="Um repositório de metodologias ativas e gamificação para transformar a sala de aula." data-lang-es="Un repositorio de metodologías activas y gamificación para transformar el aula." data-lang-en="A repository of active methodologies and gamification to transform the classroom.">
+            Um repositório de metodologias ativas e gamificação para transformar a sala de aula.
+          </p>
+          <p class="text-gray-400" data-lang-pt="Um parágrafo resumindo os projetos 'DECOLONEDU' e 'Diversidade Étnico-Racial', explicando que o objetivo é usar a gamificação para desenvolver o pensamento crítico sobre as relações étnico-raciais." data-lang-es="[Texto en Español] Párrafo resumen de los proyectos..." data-lang-en="[English Text] Paragraph summarizing the projects...">
+            Baseado nas pesquisas de Iniciação Científica "DECOLONEDU" e "Diversidade Étnico-Racial", este site utiliza a gamificação para desenvolver o pensamento crítico sobre as relações étnico-raciais e aplicar as leis 10.639/03 e 11.645/08.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <button class="nav-button bg-orange-600 hover:bg-orange-500 shadow-lg shadow-orange-600/30 text-white font-bold py-3 px-8 rounded-full transition-all duration-300" data-page="page-kit" data-lang-pt="Baixe os Jogos" data-lang-es="Descargar Juegos" data-lang-en="Download Games">
+              Baixe os Jogos
+            </button>
+            <button class="nav-button bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300" data-page="page-repositorio" data-lang-pt="Explore o Repositório" data-lang-es="Explorar Repositorio" data-lang-en="Explore Repository">
+              Explore o Repositório
+            </button>
+          </div>
+        </div>
+        <!-- Coluna de Imagem -->
+        <div class="animate-on-scroll fade-in-up p-4">
+          <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+          <img src="assets/foto-home-hero.jpg" alt="Aplicação dos jogos pedagógicos em sala de aula" class="rounded-lg shadow-2xl object-cover w-full h-full max-h-[500px]">
+        </div>
+      </div>
+
+      <!-- Seção "Reconhecimento e Repercussão" -->
+      <div class="mt-24">
+        <h2 class="text-3xl font-bold text-center mb-12 animate-on-scroll fade-in-up" data-lang-pt="Reconhecimento e Repercussão" data-lang-es="Reconocimiento y Repercusión" data-lang-en="Recognition and Acclaim">
+          Reconhecimento e Repercussão
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="1">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="Feira Brasileira de Ciência e Engenharia (FEBRACE)" data-lang-es="[ES] Feira Brasileira de Ciência e Engenharia (FEBRACE)" data-lang-en="[EN] Brazilian Science and Engineering Fair (FEBRACE)">
+              Feira Brasileira de Ciência e Engenharia (FEBRACE)
+            </h3>
+          </div>
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="2">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="76ª Reunião Anual da SBPC – SBPC Jovem" data-lang-es="[ES] 76ª Reunião Anual da SBPC – SBPC Jovem" data-lang-en="[EN] 76th Annual Meeting of SBPC – SBPC Jovem">
+              76ª Reunião Anual da SBPC – SBPC Jovem
+            </h3>
+          </div>
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="3">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="1º Primer Sudamericano de Ciencias y Tecnología" data-lang-es="[ES] 1º Primer Sudamericano de Ciencias y Tecnología" data-lang-en="[EN] 1st South American Primer of Science and Technology">
+              1º Primer Sudamericano de Ciencias y Tecnología
+            </h3>
+          </div>
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="4">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="Webinário Mostra DIC de Ciências" data-lang-es="[ES] Webinário Mostra DIC de Ciências" data-lang-en="[EN] DIC Science Fair Webinar">
+              Webinário Mostra DIC de Ciências
+            </h3>
+          </div>
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="5">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="Feira de Ciências da Bahia (FECIBA)" data-lang-es="[ES] Feira de Ciências da Bahia (FECIBA)" data-lang-en="[EN] Bahia State Science Fair (FECIBA)">
+              Feira de Ciências da Bahia (FECIBA)
+            </h3>
+          </div>
+          <!-- Card de Reconhecimento -->
+          <div class="recognition-card" data-index="6">
+            <svg class="w-10 h-10 mb-3 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-lg font-semibold" data-lang-pt="Menção Honrosa (Ciências Sociais)" data-lang-es="[ES] Menção Honrosa (Ciências Sociais)" data-lang-en="[EN] Honorable Mention (Social Sciences)">
+              Menção Honrosa (Ciências Sociais)
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================== -->
+    <!-- PÁGINA 2: KIT (page-kit)          -->
+    <!-- =================================== -->
+    <section id="page-kit" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Nossos Jogos Pedagógicos: Baixe e Aplique" data-lang-es="Nuestros Juegos Pedagógicos: Descarga y Aplica" data-lang-en="Our Pedagogical Games: Download and Apply">
+        Nossos Jogos Pedagógicos: Baixe e Aplique
+      </h2>
+      <p class="section-intro" data-lang-pt="Aqui você encontra 3 jogos pedagógicos completos, prontos para baixar, imprimir e aplicar na sua sala de aula. São ferramentas práticas para promover o diálogo antirracista." data-lang-es="[ES] Aquí encuentras 3 juegos pedagógicos completos..." data-lang-en="[EN] Here you will find 3 complete pedagogical games...">
+        Aqui você encontra 3 jogos pedagógicos completos, prontos para baixar, imprimir e aplicar na sua sala de aula. São ferramentas práticas para promover o diálogo antirracista.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <!-- Jogo 1 -->
+        <div class="game-card" data-index="1">
+          <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+          <img src="assets/foto-jogo-roleta.jpg" alt="Foto do Jogo Roleta do Antirracismo" class="game-card-image">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-orange-500 mb-2" data-lang-pt="Jogo 'Roleta do Antirracismo'" data-lang-es="Juego 'Ruleta del Antirracismo'" data-lang-en="Game 'Antiracism Roulette'">
+              Jogo "Roleta do Antirracismo"
+            </h3>
+            <p class="text-gray-400 mb-4 flex-grow" data-lang-pt="Jogo pedagógico inspirado no 'Pequeno Manual Antirracista' de Djamila Ribeiro. Usa uma roleta com 6 categorias (Conceitos, Empatia, Contexto Histórico, etc.) para sensibilizar os estudantes para práticas antirracistas." data-lang-es="[ES] Juego pedagógico inspirado en 'Pequeno Manual Antirracista'..." data-lang-en="[EN] Pedagogical game inspired by 'Pequeno Manual Antirracista'...">
+              Jogo pedagógico inspirado no 'Pequeno Manual Antirracista' de Djamila Ribeiro. Usa uma roleta com 6 categorias (Conceitos, Empatia, Contexto Histórico, etc.) para sensibilizar os estudantes para práticas antirracistas.
+            </p>
+            <!-- VOCÊ PRECISA ADICIONAR ESTE PDF -->
+            <a href="assets/kit-roleta-antirracismo.pdf" download class="download-button" data-lang-pt="Baixar o Kit do Jogo (PDF)" data-lang-es="Descargar el Kit (PDF)" data-lang-en="Download Game Kit (PDF)">
+              Baixar o Kit do Jogo (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Jogo 2 -->
+        <div class="game-card" data-index="2">
+          <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+          <img src="assets/foto-jogo-trilha-saberes.jpg" alt="Foto do Jogo Trilha dos Saberes Negros" class="game-card-image">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-orange-500 mb-2" data-lang-pt="Jogo 'Trilha dos Saberes Negros'" data-lang-es="Juego 'Senda de los Saberes Negros'" data-lang-en="Game 'Black Knowledge Trail'">
+              Jogo "Trilha dos Saberes Negros"
+            </h3>
+            <p class="text-gray-400 mb-4 flex-grow" data-lang-pt="Inspirado no livro 'História Preta das Coisas' de Bárbara Carine. Um jogo de tabuleiro que usa cartas de 'Pergunta', 'Curiosidade' e 'Sorte ou Revés' para refletir sobre as contribuições e a invisibilização da intelectualidade negra na ciência e tecnologia." data-lang-es="[ES] Inspirado en el libro 'História Preta das Coisas'..." data-lang-en="[EN] Inspired by the book 'História Preta das Coisas'...">
+              Inspirado no livro 'História Preta das Coisas' de Bárbara Carine. Um jogo de tabuleiro que usa cartas de 'Pergunta', 'Curiosidade' e 'Sorte ou Revés' para refletir sobre as contribuições e a invisibilização da intelectualidade negra na ciência e tecnologia.
+            </p>
+            <!-- VOCÊ PRECISA ADICIONAR ESTE PDF -->
+            <a href="assets/kit-trilha-saberes-negros.pdf" download class="download-button" data-lang-pt="Baixar o Kit do Jogo (PDF)" data-lang-es="Descargar el Kit (PDF)" data-lang-en="Download Game Kit (PDF)">
+              Baixar o Kit do Jogo (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Jogo 3 -->
+        <div class="game-card" data-index="3">
+          <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+          <img src="assets/foto-jogo-trilha-formativa.jpg" alt="Foto do Jogo Trilha Formativa" class="game-card-image">
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-orange-500 mb-2" data-lang-pt="Jogo 'Trilha Formativa: Educador Antirracista'" data-lang-es="Juego 'Senda Formativa: Educador Antirracista'" data-lang-en="Game 'Formative Trail: Antiracist Educator'">
+              Jogo "Trilha Formativa: Educador Antirracista"
+            </h3>
+            <p class="text-gray-400 mb-4 flex-grow" data-lang-pt="Uma jornada de empatia para a formação de professores, baseada na obra de Bárbara Carine. Os participantes assumem papéis (professor conservador, coordenadora insegura, etc.) e cumprem missões de reflexão." data-lang-es="[ES] Un viaje de empatía para la formación de profesores..." data-lang-en="[EN] An empathy journey for teacher training...">
+              Uma jornada de empatia para a formação de professores, baseada na obra de Bárbara Carine. Os participantes assumem papéis (professor conservador, coordenadora insegura, etc.) e cumprem missões de reflexão.
+            </p>
+            <!-- VOCÊ PRECISA ADICIONAR ESTE PDF -->
+            <a href="assets/kit-trilha-formativa.pdf" download class="download-button" data-lang-pt="Baixar o Kit do Jogo (PDF)" data-lang-es="Descargar el Kit (PDF)" data-lang-en="Download Game Kit (PDF)">
+              Baixar o Kit do Jogo (PDF)
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================== -->
+    <!-- PÁGINA 3: A PESQUISA (page-pesquisa) -->
+    <!-- =================================== -->
+    <section id="page-pesquisa" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Por que Jogos? O que dizem os dados da nossa pesquisa?" data-lang-es="¿Por qué Juegos? ¿Qué dicen los datos de nuestra investigación?" data-lang-en="Why Games? What does our research data say?">
+        Por que Jogos? O que dizem os dados da nossa pesquisa?
+      </h2>
+      <p class="section-intro" data-lang-pt="Estas ferramentas não surgiram do nada. Elas são uma resposta direta ao que ouvimos de 115 estudantes do Colégio Estadual de Tempo Integral Rui Barbosa. Os dados mostram a urgência de aplicar as Leis 10.639/03 e 11.645/08." data-lang-es="[ES] Estas herramientas no surgieron de la nada..." data-lang-en="[EN] These tools didn't come from nowhere...">
+        Estas ferramentas não surgiram do nada. Elas são uma resposta direta ao que ouvimos de 115 estudantes do Colégio Estadual de Tempo Integral Rui Barbosa. Os dados mostram a urgência de aplicar as Leis 10.639/03 e 11.645/08.
+      </p>
+
+      <!-- Seção "Gráficos Principais" -->
+      <div class="my-16">
+        <h3 class="subsection-title" data-lang-pt="Gráficos Principais" data-lang-es="Gráficos Principales" data-lang-en="Main Graphics">
+          Gráficos Principais
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Gráfico 1 -->
+          <div class="data-card" data-index="1">
+            <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/grafico-lei-10639.png" alt="Gráfico sobre conhecimento da Lei 10.639/03" class="w-full h-48 object-contain mb-4 rounded-lg bg-gray-700 p-2">
+            <p class="text-lg font-semibold" data-lang-pt="67,8% dos estudantes afirmaram NÃO conhecer a Lei 10.639/03." data-lang-es="[ES] 67,8% de los estudiantes..." data-lang-en="[EN] 67.8% of students...">
+              <strong>67,8%</strong> dos estudantes afirmaram NÃO conhecer a Lei 10.639/03.
+            </p>
+          </div>
+          <!-- Gráfico 2 -->
+          <div class="data-card" data-index="2">
+            <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/grafico-importancia-aulas.png" alt="Gráfico sobre importância de aulas" class="w-full h-48 object-contain mb-4 rounded-lg bg-gray-700 p-2">
+            <p class="text-lg font-semibold" data-lang-pt="85,2% concordam que é importante ter aulas e projetos que discutam a história e a cultura do povo negro." data-lang-es="[ES] 85,2% concuerdan..." data-lang-en="[EN] 85.2% agree...">
+              <strong>85,2%</strong> concordam que é importante ter aulas e projetos que discutam a história e a cultura do povo negro.
+            </p>
+          </div>
+          <!-- Gráfico 3 -->
+          <div class="data-card" data-index="3">
+            <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/grafico-importancia-saberes.png" alt="Gráfico sobre importância de saberes quilombolas" class="w-full h-48 object-contain mb-4 rounded-lg bg-gray-700 p-2">
+            <p class="text-lg font-semibold" data-lang-pt="87,8% concordam que é importante trazer os saberes das comunidades (rurais e quilombolas) para dentro da escola." data-lang-es="[ES] 87,8% concuerdan..." data-lang-en="[EN] 87.8% agree...">
+              <strong>87,8%</strong> concordam que é importante trazer os saberes das comunidades (rurais e quilombolas) para dentro da escola.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção "A Voz dos Estudantes" -->
+      <div class="my-16">
+        <h3 class="subsection-title" data-lang-pt="A Voz dos Estudantes" data-lang-es="La Voz de los Estudiantes" data-lang-en="The Students' Voice">
+          A Voz dos Estudantes
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="animate-on-scroll fade-in-up">
+            <p class="text-lg text-gray-300 mb-4" data-lang-pt="Quando perguntamos como a escola poderia melhorar, os alunos sugeriram:" data-lang-es="[ES] Cuando preguntamos..." data-lang-en="[EN] When we asked...">
+              Quando perguntamos como a escola poderia melhorar, os alunos sugeriram:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-lg text-gray-400">
+              <li data-lang-pt="Ter mais palestras" data-lang-es="[ES] Tener más charlas" data-lang-en="[EN] Have more lectures">Ter mais palestras</li>
+              <li data-lang-pt="Falar mais sobre os quilombos da cidade" data-lang-es="[ES] Hablar más sobre los quilombos de la ciudad" data-lang-en="[EN] Talk more about the city's quilombos">Falar mais sobre os quilombos da cidade</li>
+              <li data-lang-pt="Usar filmes e literatura com representatividade" data-lang-es="[ES] Usar películas y literatura con representatividad" data-lang-en="[EN] Use films and literature with representation">Usar filmes e literatura com representatividade</li>
+              <li data-lang-pt="Realizar mais projetos sobre o tema" data-lang-es="[ES] Realizar más proyectos sobre el tema" data-lang-en="[EN] Carry out more projects on the theme">Realizar mais projetos sobre o tema</li>
+            </ul>
+          </div>
+          <!-- Galeria de Fotos -->
+          <div class="animate-on-scroll fade-in-up">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/foto-roda-conversa.jpg" alt="Foto da roda de conversa com estudantes" class="rounded-lg shadow-xl w-full h-full object-cover max-h-[300px]">
+            <p class="text-center text-gray-500 text-sm mt-2" data-lang-pt="Roda de conversa no CETIRB" data-lang-es="[ES] Círculo de conversación en CETIRB" data-lang-en="[EN] Conversation circle at CETIRB">
+              Roda de conversa no CETIRB
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- =================================== -->
+    <!-- PÁGINA 4: REPOSITÓRIO (page-repositorio) -->
+    <!-- =================================== -->
+    <section id="page-repositorio" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Biblioteca, Música e Pesquisa Antirracista" data-lang-es="Biblioteca, Música e Investigación Antirracista" data-lang-en="Library, Music, and Antiracist Research">
+        Biblioteca, Música e Pesquisa Antirracista
+      </h2>
+
+      <!-- Seção 1: Biblioteca Fundamental -->
+      <div class="my-16">
+        <h3 class="subsection-title" data-lang-pt="Biblioteca Fundamental (Livros)" data-lang-es="Biblioteca Fundamental (Libros)" data-lang-en="Fundamental Library (Books)">
+          Biblioteca Fundamental (Livros)
+        </h3>
+        <p class="section-intro" data-lang-pt="Leituras essenciais que inspiraram este projeto e podem aprofundar sua prática." data-lang-es="[ES] Lecturas esenciales que inspiraron este proyecto..." data-lang-en="[EN] Essential readings that inspired this project...">
+          Leituras essenciais que inspiraram este projeto e podem aprofundar sua prática.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mt-8">
+          <!-- Livro 1 -->
+          <div class="book-card" data-index="1">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-djamila.jpg" alt="Capa do livro Pequeno Manual Antirracista" class="book-cover">
+            <p class="book-title">Pequeno Manual Antirracista</p>
+            <p class="book-author">Djamila Ribeiro</p>
+          </div>
+          <!-- Livro 2 -->
+          <div class="book-card" data-index="2">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-historia-preta.jpg" alt="Capa do livro História Preta das Coisas" class="book-cover">
+            <p class="book-title">História Preta das Coisas</p>
+            <p class="book-author">Bárbara Carine</p>
+          </div>
+          <!-- Livro 3 -->
+          <div class="book-card" data-index="3">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-educador-antirracista.jpg" alt="Capa do livro Como ser um Educador Antirracista" class="book-cover">
+            <p class="book-title">Como ser um Educador Antirracista</p>
+            <p class="book-author">Bárbara Carine</p>
+          </div>
+          <!-- Livro 4 -->
+          <div class="book-card" data-index="4">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-vera-candau.jpg" alt="Capa de livro de Vera Candau" class="book-cover">
+            <p class="book-title">Pedagogia Decolonial</p>
+            <p class="book-author">Vera Candau</p>
+          </div>
+          <!-- Livro 5 -->
+          <div class="book-card" data-index="5">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-anibal-quijano.jpg" alt="Capa de livro de Aníbal Quijano" class="book-cover">
+            <p class="book-title">Colonialidade do Poder</p>
+            <p class="book-author">Aníbal Quijano</p>
+          </div>
+          <!-- Livro 6 -->
+          <div class="book-card" data-index="6">
+             <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+            <img src="assets/livro-catherine-walsh.jpg" alt="Capa de livro de Catherine Walsh" class="book-cover">
+            <p class="book-title">Interculturalidade Crítica</p>
+            <p class="book-author">Catherine Walsh</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 2: Playlists Antirracistas -->
+      <div class="my-16">
+        <h3 class="subsection-title" data-lang-pt="Playlists Antirracistas (Músicas)" data-lang-es="Playlists Antirracistas (Música)" data-lang-en="Antiracist Playlists (Music)">
+          Playlists Antirracistas (Músicas)
+        </h3>
+        <p class="section-intro" data-lang-pt="A luta antirracista também se faz pela arte. Explore playlists que trazem consciência, história e potência." data-lang-es="[ES] La lucha antirracista también se hace a través del arte..." data-lang-en="[EN] The antiracist fight is also made through art...">
+          A luta antirracista também se faz pela arte. Explore playlists que trazem consciência, história e potência.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <!-- Player 1 -->
+          <div class="music-card" data-index="1">
+            <p class="text-lg font-semibold mb-2" data-lang-pt="Playlist 1: Música de Luta e Resistência" data-lang-es="[ES] Playlist 1" data-lang-en="[EN] Playlist 1">Música de Luta e Resistência</p>
+            <!-- VOCÊ PRECISA ADICIONAR O PLAYER DO YOUTUBE/SPOTIFY -->
+            <div class="aspect-video bg-gray-700 rounded-lg flex items-center justify-center text-gray-500">[Player Embutido]</div>
+          </div>
+          <!-- Player 2 -->
+          <div class="music-card" data-index="2">
+            <p class="text-lg font-semibold mb-2" data-lang-pt="Playlist 2: Clássicos da Consciência Negra" data-lang-es="[ES] Playlist 2" data-lang-en="[EN] Playlist 2">Clássicos da Consciência Negra</p>
+            <!-- VOCÊ PRECISA ADICIONAR O PLAYER DO YOUTUBE/SPOTIFY -->
+            <div class="aspect-video bg-gray-700 rounded-lg flex items-center justify-center text-gray-500">[Player Embutido]</div>
+          </div>
+          <!-- Player 3 -->
+          <div class="music-card" data-index="3">
+            <p class="text-lg font-semibold mb-2" data-lang-pt="Playlist 3: Novos Sons da Diáspora" data-lang-es="[ES] Playlist 3" data-lang-en="[EN] Playlist 3">Novos Sons da Diáspora</p>
+            <!-- VOCÊ PRECISA ADICIONAR O PLAYER DO YOUTUBE/SPOTIFY -->
+            <div class="aspect-video bg-gray-700 rounded-lg flex items-center justify-center text-gray-500">[Player Embutido]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção 3: Repositório Acadêmico -->
+      <div class="my-16">
+        <h3 class="subsection-title" data-lang-pt="Repositório Acadêmico (Busca)" data-lang-es="Repositorio Académico (Búsqueda)" data-lang-en="Academic Repository (Search)">
+          Repositório Acadêmico (Busca)
+        </h3>
+        <p class="section-intro" data-lang-pt="Precisa de mais fontes? Use a barra abaixo para pesquisar artigos e teses diretamente no Google Acadêmico e SciELO." data-lang-es="[ES] ¿Necesitas más fuentes?..." data-lang-en="[EN] Need more sources?...">
+          Precisa de mais fontes? Use a barra abaixo para pesquisar artigos e teses diretamente no Google Acadêmico e SciELO.
+        </p>
+        <div class="mt-8 max-w-2xl mx-auto animate-on-scroll fade-in-up">
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input type="text" id="academic-search-input" class="flex-grow bg-gray-700 border border-gray-600 text-white text-lg rounded-full py-3 px-6 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Pesquisar artigos...">
+            <button id="academic-search-button" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300" data-lang-pt="Buscar" data-lang-es="Buscar" data-lang-en="Search">
+              Buscar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================== -->
+    <!-- PÁGINA 5: FÁBRICA (page-fabrica)    -->
+    <!-- =================================== -->
+    <section id="page-fabrica" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Crie seu Próprio Jogo Antirracista!" data-lang-es="¡Crea tu Propio Juego Antirracista!" data-lang-en="Create Your Own Antiracist Game!">
+        Crie seu Próprio Jogo Antirracista!
+      </h2>
+      <p class="section-intro" data-lang-pt="Este repositório é vivo. Use os 15 prompts abaixo no Gemini (ou outra IA) para criar novas atividades, quizzes e jogos para sua escola. Copie, cole e adapte!" data-lang-es="[ES] Este repositorio está vivo..." data-lang-en="[EN] This repository is alive...">
+        Este repositório é vivo. Use os 15 prompts abaixo no Gemini (ou outra IA) para criar novas atividades, quizzes e jogos para sua escola. Copie, cole e adapte!
+      </p>
+      
+      <!-- Categoria A -->
+      <h3 class="subsection-title mt-12" data-lang-pt="Categoria A: Jogos de Conceito e História" data-lang-es="Categoría A: Juegos de Concepto e Historia" data-lang-en="Category A: Concept and History Games">
+        Categoria A: Jogos de Conceito e História
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="prompt-card" data-index="1">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Mito ou Fato?</h4>
+          <p class="prompt-text">"Crie 10 afirmações sobre a história afro-brasileira no formato 'Mito ou Fato'. Inclua a resposta correta e uma breve explicação para cada."</p>
+        </div>
+        <div class="prompt-card" data-index="2">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Dicionário Interativo</h4>
+          <p class="prompt-text">"Defina 5 conceitos-chave da luta antirracista (ex: Racismo Estrutural, Lugar de Fala, Apropriação Cultural) em linguagem simples para alunos do 9º ano."</p>
+        </div>
+        <div class="prompt-card" data-index="3">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Quiz das Leis</h4>
+          <p class="prompt-text">"Crie um quiz de 5 perguntas de múltipla escolha sobre o que as Leis 10.639/03 e 11.645/08 determinam para as escolas."</p>
+        </div>
+        <div class="prompt-card" data-index="4">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Linha do Tempo</h4>
+          <p class="prompt-text">"Liste 5 eventos cruciais para a história da resistência negra no Brasil, com datas e uma breve descrição de sua importância."</p>
+        </div>
+        <div class="prompt-card" data-index="5">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Conexões Africanas</h4>
+          <p class="prompt-text">"Liste 5 palavras do português brasileiro que têm origem em línguas africanas (ex: Banto) e explique seus significados originais."</p>
+        </div>
+      </div>
+
+      <!-- Categoria B -->
+      <h3 class="subsection-title mt-12" data-lang-pt="Categoria B: Jogos de Protagonismo" data-lang-es="Categoría B: Juegos de Protagonismo" data-lang-en="Category B: Protagonism Games">
+        Categoria B: Jogos de Protagonismo
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="prompt-card" data-index="4">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Super-Trunfo: Heroínas Negras</h4>
+          <p class="prompt-text">"Crie 3 cartas de um jogo estilo 'Super-Trunfo' para personalidades como Dandara dos Palmares, Carolina Maria de Jesus e Lélia Gonzalez. Inclua categorias como 'Impacto Histórico', 'Ativismo' e 'Produção Intelectual'."</p>
+        </div>
+        <div class="prompt-card" data-index="5">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Quem Disse Isso?</h4>
+          <p class="prompt-text">"Crie 5 citações famosas de intelectuais e ativistas negros (ex: Angela Davis, Abdias Nascimento) e pergunte 'Quem disse isso?' com 3 opções de resposta."</p>
+        </div>
+        <div class="prompt-card" data-index="6">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Batalha de Rimas</h4>
+          <p class="prompt-text">"Atue como um juiz de batalha de rimas. Dê um tema (ex: 'Resistência Quilombola') e peça ao aluno para criar uma rima de 4 linhas. Em seguida, dê feedback positivo e construtivo."</p>
+        </div>
+         <div class="prompt-card" data-index="7">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Inventores Invisibilizados</h4>
+          <p class="prompt-text">"Descreva a invenção de 3 cientistas ou inventores negros que foram invisibilizados pela história (ex: André Rebouças, Lewis Latimer) e explique o impacto de suas criações."</p>
+        </div>
+         <div class="prompt-card" data-index="8">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Desafio do Samba</h4>
+          <p class="prompt-text">"Explique em 3 parágrafos curtos a importância do Samba como ferramenta de resistência cultural e coesão social nas comunidades negras no início do século XX no Brasil."</p>
+        </div>
+      </div>
+
+      <!-- Categoria C -->
+      <h3 class="subsection-title mt-12" data-lang-pt="Categoria C: Jogos de Empatia e Cenário" data-lang-es="Categoría C: Juegos de Empatía y Escenario" data-lang-en="Category C: Empathy and Scenario Games">
+        Categoria C: Jogos de Empatia e Cenário
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="prompt-card" data-index="7">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Expansão da Trilha Formativa</h4>
+          <p class="prompt-text">"Crie mais 2 cartas de 'Missão' para o jogo 'Trilha Formativa para Educadores Antirracistas'. As missões devem ser baseadas em cenários reais de sala de aula e focar na empatia."</p>
+        </div>
+        <div class="prompt-card" data-index="8">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Caminhos da Desigualdade</h4>
+          <p class="prompt-text">"Crie 3 cartas de 'Sorte ou Revés' para um jogo de tabuleiro sobre desigualdade racial. As cartas devem refletir privilégios ou obstáculos estruturais (ex: 'Você mora perto de uma boa escola' vs. 'Você sofreu uma abordagem policial injusta')."</p>
+        </div>
+        <div class="prompt-card" data-index="9">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Conselho Escolar (RPG)</h4>
+          <p class="prompt-text">"Descreva um cenário de RPG para um conselho escolar. O tema é 'Implementar cotas no grêmio estudantil'. Crie 3 papéis: 'Aluno Cotista', 'Aluno Contra' e 'Diretor que precisa mediar'."</p>
+        </div>
+        <div class="prompt-card" data-index="10">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Análise de Mídia</h4>
+          <p class="prompt-text">"Peça para o aluno analisar uma cena de filme ou novela (descreva a cena) e identificar se há estereótipos raciais presentes. Peça para ele justificar a resposta."</p>
+        </div>
+         <div class="prompt-card" data-index="11">
+          <button class="copy-prompt-button" title="Copiar Prompt">[Copiar]</button>
+          <h4 class="prompt-title">Como Responder?</h4>
+          <p class="prompt-text">"Um colega faz uma piada racista na sala. Crie 3 formas diferentes de responder a essa situação: uma como o alvo da piada, uma como um colega que observou, e uma como o professor."</p>
+        </div>
+      </div>
+      
+      <!-- Notificação de Cópia -->
+      <div id="copy-notification" class="hidden fixed bottom-10 right-10 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg" data-lang-pt="Prompt copiado!" data-lang-es="¡Prompt copiado!" data-lang-en="Prompt copied!">
+        Prompt copiado!
+      </div>
+    </section>
+
+    <!-- =================================== -->
+    <!-- PÁGINA 6: CHAT GRIÔ (page-grio)     -->
+    <!-- =================================== -->
+    <section id="page-grio" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Chat Griô: Fale com nossa IA" data-lang-es="Chat Griô: Habla con nuestra IA" data-lang-en="Griô Chat: Talk to our AI">
+        Chat Griô: Fale com nossa IA
+      </h2>
+      <p class="section-intro" data-lang-pt="Converse com o Griô, um assistente de IA pronto para responder suas perguntas sobre qualquer assunto, de história a programação, com foco no aprendizado." data-lang-es="[ES] Conversa com o Griô..." data-lang-en="[EN] Talk to Griô...">
+        Converse com o Griô, um assistente de IA pronto para responder suas perguntas sobre qualquer assunto, de história a programação, com foco no aprendizado.
+      </p>
+
+      <div class="mt-8 max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-2xl border border-gray-700 flex flex-col h-[70vh] animate-on-scroll fade-in-up">
+        <!-- Caixa de Chat -->
+        <div id="grio-chat-box" class="flex-grow p-4 md:p-6 space-y-4 overflow-y-auto">
+          <!-- Mensagem de Boas-Vindas -->
+          <div class="chat-message model p-4 rounded-lg">
+            <strong class="text-orange-500">Griô diz:</strong>
+            <p data-lang-pt="Olá! Eu sou o Griô. Estou aqui para ajudar com suas dúvidas sobre qualquer assunto. O que você gostaria de saber hoje?" data-lang-es="[ES] ¡Hola! Soy Griô..." data-lang-en="[EN] Hi! I'm Griô...">
+              Olá! Eu sou o Griô. Estou aqui para ajudar com suas dúvidas sobre qualquer assunto. O que você gostaria de saber hoje?
+            </p>
+          </div>
+          <!-- Mensagens do chat aparecerão aqui -->
+        </div>
+        
+        <!-- Caixa de "Digitando..." -->
+        <div id="grio-loading-indicator" class="hidden p-4 md:p-6 border-t border-gray-700">
+           <div class="flex items-center space-x-2">
+            <div class="typing-dot"></div>
+            <div class="typing-dot" style="animation-delay: 0.2s;"></div>
+            <div class="typing-dot" style="animation-delay: 0.4s;"></div>
+            <span class="text-gray-400" data-lang-pt="Griô está pensando..." data-lang-es="Griô está pensando..." data-lang-en="Griô is thinking...">Griô está pensando...</span>
+          </div>
+        </div>
+
+        <!-- Input de Mensagem -->
+        <div class="p-4 md:p-6 border-t border-gray-700">
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input type="text" id="grio-chat-input" class="flex-grow bg-gray-700 border border-gray-600 text-white text-lg rounded-full py-3 px-6 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Digite sua mensagem...">
+            <button id="grio-chat-send" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-full transition-all duration-300">
+              <span class="hidden sm:inline" data-lang-pt="Enviar" data-lang-es="Enviar" data-lang-en="Send">Enviar</span>
+              <svg class="w-6 h-6 inline sm:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================== -->
+    <!-- PÁGINA 7: SOBRE (page-sobre)        -->
+    <!-- =================================== -->
+    <section id="page-sobre" class="page-content hidden">
+      <h2 class="section-title" data-lang-pt="Sobre o Pesquisador e o Projeto" data-lang-es="Sobre el Investigador y el Proyecto" data-lang-en="About the Researcher and the Project">
+        Sobre o Pesquisador e o Projeto
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+        <!-- Coluna da Foto -->
+        <div class="md:col-span-1 flex flex-col items-center animate-on-scroll fade-in-up">
+           <!-- VOCÊ PRECISA ADICIONAR ESTA IMAGEM -->
+          <img src="assets/foto-daniel-autor.jpg" alt="Foto do pesquisador Daniel Macedo Santana" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover shadow-2xl border-4 border-orange-600">
+          <h3 class="text-2xl font-bold mt-6">Daniel Macedo Santana</h3>
+          <p class="text-lg text-gray-400 text-center" data-lang-pt="Estudante Pesquisador" data-lang-es="[ES] Estudante Pesquisador" data-lang-en="[EN] Student Researcher">
+            Estudante Pesquisador
+          </p>
+        </div>
+
+        <!-- Coluna de Biografia e Contato -->
+        <div class="md:col-span-2 space-y-8 animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
+          <div>
+            <h4 class="subsection-title-small" data-lang-pt="Biografia" data-lang-es="[ES] Biografia" data-lang-en="[EN] Biography">
+              Biografia
+            </h4>
+            <p class="text-lg text-gray-300" data-lang-pt="Meu nome é Daniel Macedo Santana, sou estudante pesquisador de Iniciação Científica no Colégio Estadual de Tempo Integral Rui Barbosa (CETIRB), localizado em Boninal, Chapada Diamantina, Bahia (NTE-03)." data-lang-es="[ES] Mi nombre es Daniel Macedo Santana..." data-lang-en="[EN] My name is Daniel Macedo Santana...">
+              Meu nome é Daniel Macedo Santana, sou estudante pesquisador de Iniciação Científica no Colégio Estadual de Tempo Integral Rui Barbosa (CETIRB), localizado em Boninal, Chapada Diamantina, Bahia (NTE-03).
+            </p>
+          </div>
+
+          <div>
+            <h4 class="subsection-title-small" data-lang-pt="Trajetória da Pesquisa" data-lang-es="[ES] Trajetória da Pesquisa" data-lang-en="[EN] Research Trajectory">
+              Trajetória da Pesquisa
+            </h4>
+            <p class="text-lg text-gray-300" data-lang-pt="Um texto detalhando o histórico do projeto, desde a pesquisa 'Diversidade Étnico-Racial' (2024) até o 'DECOLONEDU' (2025) e as apresentações nas feiras científicas (citar FEBRACE, SBPC, Primer Sudamericano e Mostra DIC)." data-lang-es="[ES] Un texto detallando el histórico del proyecto..." data-lang-en="[EN] A text detailing the project's history...">
+              O projeto nasceu da pesquisa "Diversidade Étnico-Racial: A escola como espaço de (re)conhecimento das Leis 10.639/03 e 11.645/08" (2024) e evoluiu para o "DECOLONEDU: Práticas e Pesquisas para uma Educação Antirracista" (2025). As ferramentas pedagógicas desenvolvidas foram apresentadas em eventos como a FEBRACE, SBPC Jovem, Primer Sudamericano de Ciencias y Tecnología e a Mostra DIC de Ciências, buscando sempre conectar a pesquisa acadêmica com a transformação real da sala de aula.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="subsection-title-small" data-lang-pt="Contato e Instituição" data-lang-es="[ES] Contato e Instituição" data-lang-en="[EN] Contact and Institution">
+              Contato e Instituição
+            </h4>
+            <ul class="text-lg text-gray-300 space-y-2">
+              <li class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span>daniel.santana238@aluno.educacao.ba.gov.br</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                <span>Colégio Estadual de Tempo Integral Rui Barbosa - Boninal, BA</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="bg-gray-800 border-t border-gray-700 mt-24">
+    <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+      <p>&copy; 2025 DECOLONEDU. Todos os direitos reservados.</p>
+      <p class="text-sm" data-lang-pt="Um projeto de Iniciação Científica de Daniel Macedo Santana." data-lang-es="[ES] Un proyecto de Iniciación Científica..." data-lang-en="[EN] A Scientific Initiation project...">
+        Um projeto de Iniciação Científica de Daniel Macedo Santana.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Link para seu novo arquivo de JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
